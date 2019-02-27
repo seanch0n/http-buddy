@@ -34,3 +34,9 @@ You can either build HTTP-Buddy from source, or deploy the docker container.
 /code/http-buddy $ curl http://localhost:8080/headers
 /code/http-buddy $ {"Headers":[{"User-Agent":"curl/7.47.0"},{"Accept":"*/*"}],"count":2}
 ```
+
+# Demo Server
+If you would like to try HTTP-Buddy out without running it yourself, there is an instance running at:
+```
+http://159.65.177.76:8888/
+```
