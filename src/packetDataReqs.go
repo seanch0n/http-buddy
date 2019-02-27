@@ -22,7 +22,7 @@ func getMyIP(w http.ResponseWriter, r *http.Request) {
 		response.IP = tmp[0]
 	} else {
 		fmt.Println("[!] ERR parsing IP getMyIP")
-		http.Error(w, "Could not parse IP", http.StatusNotFound)
+		http.Error(w, "", http.StatusNotFound)
 		return
 	}
 	respJSON, err := json.Marshal(response)
