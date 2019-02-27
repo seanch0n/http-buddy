@@ -14,8 +14,17 @@ import (
 */
 func getMyIP(w http.ResponseWriter, r *http.Request) {
 	response := IPResp{}
-	response.IP = strings.Split(r.RemoteAddr, ":")[0]
-	response.Port = strings.Split(r.RemoteAddr, ":")[1]
+	tmp := strings.Split(r.RemoteAddr, ":")
+	if len(tmp) == 2 {
+		response.IP = tmp[0]
+		response.Port = tmp[1]
+	} else if len(tmp) == 1 {
+		response.IP = tmp[0]
+	} else {
+		fmt.Println("[!] ERR parsing IP getMyIP")
+		http.Error(w, "Could not parse IP", http.StatusNotFound)
+		return
+	}
 	respJSON, err := json.Marshal(response)
 	if err != nil {
 		fmt.Println("[!] ERR creating JSON object in getPATCHResp")
