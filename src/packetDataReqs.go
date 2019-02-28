@@ -22,7 +22,7 @@ func getMyIP(w http.ResponseWriter, r *http.Request) {
 		response.IP = tmp[0]
 	} else {
 		fmt.Println("[!] ERR parsing IP getMyIP")
-		http.Error(w, "", http.StatusNotFound)
+		http.Error(w, "", http.StatusBadRequest)
 		return
 	}
 	respJSON, err := json.Marshal(response)
@@ -64,7 +64,7 @@ func getHeaders(w http.ResponseWriter, r *http.Request) {
 	respJSON, err := json.Marshal(response)
 	if err != nil {
 		fmt.Println("[!] ERR creating JSON object in getPATCHResp")
-		http.Error(w, err.Error(), http.StatusNotFound)
+		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
 	w.Header().Set("Content-Type", "application/json")
@@ -92,7 +92,7 @@ func getUserAgent(w http.ResponseWriter, r *http.Request) {
 	respJSON, err := json.Marshal(response)
 	if err != nil {
 		fmt.Println("[!] ERR creating JSON object in getPATCHResp")
-		http.Error(w, err.Error(), http.StatusNotFound)
+		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
 	w.Header().Set("Content-Type", "application/json")

@@ -130,9 +130,9 @@ func TestGetMyIPTooManyFields(t *testing.T) {
 	handler := http.HandlerFunc(getMyIP)
 	req.RemoteAddr = "1.1.1.1:4444:3333"
 	handler.ServeHTTP(recorder, req)
-	if status := recorder.Code; status != http.StatusNotFound {
+	if status := recorder.Code; status != http.StatusBadRequest {
 		t.Errorf("getMyIP returned wrong status code: got %v want %v",
-			status, http.StatusNotFound)
+			status, http.StatusBadRequest)
 	}
 }
 

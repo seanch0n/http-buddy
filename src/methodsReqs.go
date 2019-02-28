@@ -19,13 +19,13 @@ func getPOSTResp(w http.ResponseWriter, r *http.Request) {
 		respJSON, err := json.Marshal(response)
 		if err != nil {
 			fmt.Println("[!] ERR creating JSON object in getPOSTResp")
-			http.Error(w, err.Error(), http.StatusNotFound)
+			http.Error(w, err.Error(), http.StatusBadRequest)
 			return
 		}
 		w.Header().Set("Content-Type", "application/json")
 		w.Write(respJSON)
 	} else {
-		http.Error(w, "BAD METHOD", http.StatusNotFound)
+		http.Error(w, "BAD METHOD", http.StatusBadRequest)
 		return
 	}
 }
@@ -43,13 +43,13 @@ func getGETResp(w http.ResponseWriter, r *http.Request) {
 		respJSON, err := json.Marshal(response)
 		if err != nil {
 			fmt.Println("[!] ERR creating JSON object in getGETResp")
-			http.Error(w, err.Error(), http.StatusNotFound)
+			http.Error(w, err.Error(), http.StatusBadRequest)
 			return
 		}
 		w.Header().Set("Content-Type", "application/json")
 		w.Write(respJSON)
 	} else {
-		http.Error(w, "BAD METHOD", http.StatusNotFound)
+		http.Error(w, "BAD METHOD", http.StatusBadRequest)
 		return
 	}
 }
@@ -67,13 +67,13 @@ func getPATCHResp(w http.ResponseWriter, r *http.Request) {
 		respJSON, err := json.Marshal(response)
 		if err != nil {
 			fmt.Println("[!] ERR creating JSON object in getPATCHResp")
-			http.Error(w, err.Error(), http.StatusNotFound)
+			http.Error(w, err.Error(), http.StatusBadRequest)
 			return
 		}
 		w.Header().Set("Content-Type", "application/json")
 		w.Write(respJSON)
 	} else {
-		http.Error(w, "BAD METHOD", http.StatusNotFound)
+		http.Error(w, "BAD METHOD", http.StatusBadRequest)
 		return
 	}
 }
@@ -91,13 +91,13 @@ func getPUTResp(w http.ResponseWriter, r *http.Request) {
 		respJSON, err := json.Marshal(response)
 		if err != nil {
 			fmt.Println("[!] ERR creating JSON object in getPUTResp")
-			http.Error(w, err.Error(), http.StatusNotFound)
+			http.Error(w, err.Error(), http.StatusBadRequest)
 			return
 		}
 		w.Header().Set("Content-Type", "application/json")
 		w.Write(respJSON)
 	} else {
-		http.Error(w, "BAD METHOD", http.StatusNotFound)
+		http.Error(w, "BAD METHOD", http.StatusBadRequest)
 		return
 	}
 }
@@ -115,13 +115,13 @@ func getDELETEResp(w http.ResponseWriter, r *http.Request) {
 		respJSON, err := json.Marshal(response)
 		if err != nil {
 			fmt.Println("[!] ERR creating JSON object in getDELETEResp")
-			http.Error(w, err.Error(), http.StatusNotFound)
+			http.Error(w, err.Error(), http.StatusBadRequest)
 			return
 		}
 		w.Header().Set("Content-Type", "application/json")
 		w.Write(respJSON)
 	} else {
-		http.Error(w, "BAD METHOD", http.StatusNotFound)
+		http.Error(w, "BAD METHOD", http.StatusBadRequest)
 		return
 	}
 }
