@@ -17,7 +17,7 @@ RUN go get -d -v ./...
 # Install the package
 RUN go install -v ./...
 
-RUN go build -o http-buddy src/*.go
+RUN go build -o http-buddy 
 
 # This container exposes port 8080 to the outside world
 EXPOSE 8080
