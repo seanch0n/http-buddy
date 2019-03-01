@@ -16,7 +16,7 @@ You can either build HTTP-Buddy from source, or deploy the docker container.
 
 ## Building From Source
 ```
-/code/http-buddy $ go build -o http-buddy src/*.go
+/code/http-buddy $ go build -o http-buddy 
 /code/http-buddy $ ./http-buddy
 ```
 
