@@ -38,5 +38,5 @@ You can either build HTTP-Buddy from source, or deploy the docker container.
 # Demo Server
 If you would like to try HTTP-Buddy out without running it yourself, there is an instance running at:
 ```
-http://159.65.177.76:8888/
+http://test.bikerunhack.com
 ```
